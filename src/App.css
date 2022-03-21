@@ -1,0 +1,407 @@
+/* Variáveis principais do CSS. */
+:root {
+    /* Variável do background. */
+    --HSL-background-color: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+    /* Variáveis de cores dos elementos. */
+    --HSL-scissors: hsl(40, 84%, 53%);
+    --HSL-scissors-shadow: hsl(39, 88%, 44%);
+    --HSL-paper: hsl(230, 89%, 65%);
+    --HSL-paper-shadow: hsl(230, 89%, 62%);
+    --HSL-rock: hsl(349, 70%, 56%);
+    --HSL-rock-shadow: hsl(349, 71%, 52%);
+    --HSL-lizard: hsl(261, 72%, 63%);
+    --HSL-lizard-shadow: hsl(261, 73%, 60%);
+    --HSL-spock: hsl(189, 58%, 57%);
+    --HSL-spock-shadow: hsl(189, 59%, 53%);
+
+    /* Variáveis das cores dos textos. */
+    --HSL-dark-text: hsl(229, 25%, 31%);
+    --HSL-score-text: hsl(229, 64%, 46%);
+    --HSL-header-outline: hsl(217, 16%, 45%);
+
+    /* Variáveis de customização de elementos básicos. */
+    --RGB-score-box-background: rgb(255, 255, 255);
+}
+
+
+
+/* Estilização da DIV principal do aplicativo. */
+.main-div {
+    background: var(--HSL-background-color);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    overflow: none;
+
+    padding: 20px;
+
+    display: flex; flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(min-width: 1000px) {
+    .main-div {
+        justify-content: center;
+    }
+}
+
+/* ---------------- Estilização do Cabeçalho e Componentes ---------------- */
+.header {
+    border: 3px solid var(--HSL-header-outline);
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+
+    display: flex; justify-content: space-between;
+    align-items: center; flex-flow: row;
+}
+
+.score-box {
+    background: var(--RGB-score-box-background);
+    padding: 12px;
+
+    border-radius: 10px;
+    width: 60px;
+    height: 52px;
+
+    display: flex; justify-content: center; align-items: center; flex-flow: column;
+}
+
+.score-text {
+    color: var(--HSL-score-text);
+    text-align: center;
+    font-size: 11.5px;
+    letter-spacing: 1px;
+
+    width: 100%;
+}
+
+.score {
+    color: var(--HSL-dark-text);
+    text-align: center;
+    font-size: 40px;
+
+    width: 100%;
+    margin-top: -2px;
+}
+
+.description {
+    color: white;
+    display: flex; justify-content: center; align-items: flex-start;
+    flex-flow: column;
+
+    font-size: 10px;
+    padding: 10px;
+    padding-top: 8px; padding-bottom: 8px;
+
+    letter-spacing: 2px;
+}
+
+.description span {
+    text-align: start;
+}
+
+@media(min-width: 1000px) {
+    .header {
+        margin-top: 20px;
+        max-width: 600px;
+
+        padding: 0;
+        width: 100%;
+    }
+
+    .score-box {
+        height: 90px;
+        width: 130px;
+
+        margin-right: 15px;
+    }
+
+    .score {
+        font-size: 80px;
+        margin-top: -15px;
+    }
+
+    .score-text {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .description {
+        font-size: 26px;
+        padding-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    .description span {
+        height: 21px;
+    }
+}
+
+@media(min-width: 500px) and (max-width: 1000px){
+    .score-box {
+        height: 72px;
+        width: 80px;
+    }
+
+    .score-text {
+        font-size: 17px;
+    }
+
+    .score {
+        font-size: 50px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+}
+/* ------------------------------------------------------------------------ */
+
+
+
+/* -------------------- Estilização da DIV de Seleção  -------------------- */
+.select-box {
+    flex: 4;
+    width: 100%;
+
+    display: flex; justify-content: center; align-items: center; flex-flow: column;
+}
+
+.select {
+    width: 65%;
+    max-width: 350px;
+
+    position: relative;
+
+    display: flex; justify-content: center; align-items: center;
+}
+
+.select-bg-pentagon {
+    width: 100%;
+}
+
+/* ---- Criação dos botões interativos. */
+.select-button-div {
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 100%;
+    width: 75px;
+    height: calc(75px - 3.5px);
+    
+    position: absolute; 
+}
+
+.select-button {
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 100%;
+    width: 80%;
+    height: 80%;
+
+    background: white;
+    
+    border-top: 3.5px solid rgb(209, 209, 209);
+    position: absolute;
+
+    margin-bottom: -3.5px;
+}
+
+.select-button img {
+    width: 40%;
+    position: absolute;
+    margin-top: -3.5px;
+}
+
+@media(max-height: 620px){
+    .select-box {
+        transform: scale(0.7, 0.7);
+    }
+}
+
+@media(min-width: 1000px){
+    .select-button-div {
+        transform: scale(2, 2);
+    }
+}
+
+@media(min-width: 500px) and (max-width: 1000px){
+    .select-button-div {
+        transform: scale(1.5, 1.5);
+    }
+}
+
+@media(max-width: 300px) {
+    .select-button-div {
+        transform: scale(0.75, 0.75);
+    }
+}
+
+/* ---- Definição de cores e localizações dos botões interativos. */
+#scissors {
+    top: -35px;
+
+    background: var(--HSL-scissors);
+    border-bottom: 3.5px solid var(--HSL-scissors-shadow);
+}
+
+#paper {
+    right: -35px;
+    top: 19%;
+
+    background: var(--HSL-paper);
+    border-bottom: 3.5px solid var(--HSL-paper-shadow);
+}
+
+#rock {
+    right: 4%;
+    bottom: -35px;
+
+    background: var(--HSL-rock);
+    border-bottom: 3.5px solid var(--HSL-rock-shadow);
+}
+
+#lizard {
+    left: 4%;
+    bottom: -35px;
+
+    background: var(--HSL-lizard);
+    border-bottom: 3.5px solid var(--HSL-lizard-shadow);
+}
+
+#spock {
+    left: -35px;
+    top: 19%;
+
+    background: var(--HSL-spock);
+    border-bottom: 3.5px solid var(--HSL-spock-shadow);
+}
+/* ------------------------------------------------------------------------ */
+
+
+
+/* -------------------- Estilização da Caixa Inferior  -------------------- */
+.bottom-box {
+    flex: 1;
+    width: 100%;
+
+    display: flex; justify-content: center; align-items: center;
+}
+
+.rules-button {
+    border: 2px solid var(--HSL-header-outline);
+    text-align: center; display: flex; justify-content: center; align-items: center;
+    padding: 10px;
+
+    color: white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+
+    width: 100px;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+}
+.rules-button:hover {
+    color: var(--HSL-dark-text);
+    background: white;
+    border: 2px solid white;
+}
+.rules-button:active {
+    transform: scale(1.05, 1.05);
+}
+
+@media(min-width: 600px) {
+    .rules-button {
+        transform: scale(1.5, 1.5);
+    }
+}
+
+@media(min-width: 1000px) {
+    .bottom-box {
+        flex: auto; width: auto; position: absolute; right: 60px; bottom: 40px;
+        transform: scale(0.7, 0.7);
+    }
+}
+/* ------------------------------------------------------------------------ */
+
+
+
+/* ------------------- Estilização do Janela de Regras  ------------------- */
+.popup-div {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background: white;
+    z-index: 1000;
+
+    position: absolute;
+
+    top: 0px;
+
+    display: flex; justify-content: space-evenly; align-items: center;
+    flex-flow: column;
+    
+    padding: 20px;
+}
+
+.popup-desc {
+    flex: 1;
+
+    display: flex; justify-content: center; align-items: center;
+    font-size: 25px; color: var(--HSL-dark-text); letter-spacing: 3px;
+}
+
+.popup-rules {
+    flex: 2;
+
+    display: flex; justify-content: center; align-items: center;
+}
+
+.popup-rules img {width: 100%; }
+
+.popup-close {
+    flex: 1;
+
+    display: flex; justify-content: center; align-items: center;
+}
+
+@media(min-width: 1000px){
+    .popup-div {
+        width: 320px;
+        height: 370px;
+
+        top: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.466);
+    }
+
+    .popup-desc {
+        position: absolute;
+        display: flex; justify-content: center; align-items: center;
+        font-size: 25px; color: var(--HSL-dark-text); font-weight: bold;
+        letter-spacing: 0px;
+
+        top: 25px; left: 30px;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .popup-rules {
+        position: absolute; bottom: 30px;
+        margin-left: 15px; margin-right: 15px;
+    }
+
+    .popup-black-screen {
+        z-index: 800;
+        background: rgba(0, 0, 0, 0.562);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+/* ------------------------------------------------------------------------ */
