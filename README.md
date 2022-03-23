@@ -7,11 +7,11 @@ Essa é uma das soluções para o [Desafio do Pedra, Papel e Tesoura do Frontend
 ## SUMÁRIO
 
 - [RESUMO](#RESUMO)
-  - [DESAFIO](#the-challenge)
-  - [IMAGENS](#screenshot)
-- [PROCESSO](#my-process)
-  - [FERRAMENTAS UTILIZADAS](#built-with)
-- [AUTOR | CRÉDITOS](#author)
+  - [DESAFIO](#DESAFIO)
+  - [IMAGENS](#IMAGENS)
+- [PROCESSO](#PROCESSO)
+  - [FERRAMENTAS UTILIZADAS](#FERRAMENTAS)
+- [AUTOR | CRÉDITOS](#AUTOR)
 
 ## RESUMO
 Foi um desafio um pouco mais complicado, visto que eu queria animar alguns componentes e manter a dinâmica da página interativa e agradável visualmente. Optei por utilizar React pelas bibliotecas adicionais que ele proporciona e a dinamicidade atráves dos estados dos componentes.
