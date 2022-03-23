@@ -32,22 +32,21 @@ Os usuários precisam conseguir:
 
 ### IMAGENS | PRINTS
 
-**Mobile:** tela principal.
+### MOBILE
 ![](./screenshots/mobile-home.png)
-**Mobile:** tela de jogo.
 ![](./screenshots/mobile-game.png)
-**Mobile:** tela de regras.
 ![](./screenshots/mobile-rules.png)
-**Desktop:** tela principal.
+
+## DESKTOP
 ![](./screenshots/desktop-home.png)
-**Desktop:** tela de jogo.
 ![](./screenshots/desktop-game.png)
-**Desktop:** tela de regras.
 ![](./screenshots/desktop-rules.png)
 
 ## PROCESSO
 Eu iniciei o projeto em React e meu primeiro passo foi a construção da base em JSX, separei as variáveis de cor - que o desafio disponibiliza - no meu arquivo "App.css" e deixei o arquivo "index.css" para mudanças mais estruturais; como o tamanho mínimo da página e esse tipo de responsividade, além da definição da fonte.
+
 Depois eu fui gradualmente desenvolvendo o aplicativo, eu dividi em três partes: o cabeçalho, o centro (que engloba a tela de seleção e a tela do jogo em si) e a parte inferior (que em dispositivos mais largos se tornaria absoluto e iria para o canto inferior direito, como pede o desafio em seu design exemplo). Fui desenvolvendo os componentes existentes nelas, ajustando a responsividade individual de cada um.
+
 Outrora, já perto de concluir o visual, comecei o desenvolvimento da lógica por trás do jogo - que é bem fácil, **cada mão vence outras duas mãos e perde para o resto, com exceção de si mesma, uma chance que pode ser eliminada facilmente no começo da função na comparação das duas** - e terminei com alguns ajustes na responsividade geral.
 
 ### FERRAMENTAS
