@@ -34,6 +34,7 @@ Os usuários precisam conseguir:
 
 ### MOBILE
 ![](./screenshots/mobile-home.png)
+![](./screenshots/mobile-pre-game.png)
 ![](./screenshots/mobile-game.png)
 ![](./screenshots/mobile-rules.png)
 
