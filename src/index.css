@@ -12,6 +12,7 @@ body {
     width: 100%;
     height: 100%;
 
+    overflow-x: hidden;
     user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -20,6 +21,27 @@ body {
 #root{
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
+}
+
+@media(max-height: 510px){
+    html {
+        height: 800px;
+    }
+
+    body {
+        height: 800px;
+    }
+}
+
+@media(max-height: 600px) and (min-width: 1000px) {
+    html {
+        height: 900px;
+    }
+
+    body {
+        height: 900px;
+    }
 }
 
 /* Importação de tipo de fonte. */

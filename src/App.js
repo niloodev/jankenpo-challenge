@@ -1,3 +1,13 @@
+// *niloodev
+// Essa aplicação é um desafio proposto pelo Frontend Mentor, onde foi pedido um jogo de Jankenpon (pedra, papel e tesoura)
+// customizado, onde o usuário poderia escolher dentre as cinco opções disponíveis - pedra, papel, tesoura, lagarto ou spock (referência à Star Trek)
+// e dionte da opção escolhida, um "bot" iria escolher uma outra opção aleatória e o jogo iria exibir o resultado.
+// REQUISITOS PARA CONCLUSÂO DO DESAFIO:
+// - Ser responsivo.
+// - O jogo proposto ser funcional diante das regras.
+// - Cumprir os requisitos em questão de páginas solicitadas (seleção, pop-up de regras etc).
+// *utilizei do conceito aplicado do "mobile-first" neste projeto, o que é visível atráves do arquivo CSS.
+
 import React, { useState } from "react"
 
 // Importação de CSS
@@ -24,6 +34,7 @@ function App() {
     const [popupOpen, setPopupOpen] = useState(false);
 
     //////////////////////////////////////////////////// Funções do jogo em si.
+    const [score, setScore] = useState(0);
     const [handSelected, setHandSelected] = useState("");
     const [homeHand, setHomeHand] = useState("");
     const [matchStatus, setMatchStatus] = useState(0);
@@ -33,23 +44,23 @@ function App() {
         if(handOne == handTwo) {setMatchStatus(3); return "draw";}
         switch(handOne){
             case "scissors":
-                if(handTwo == "paper" || handTwo == "lizard") {setMatchStatus(1); return "win";}
+                if(handTwo == "paper" || handTwo == "lizard") {setMatchStatus(1); setScore(score + 1); return "win";}
                 else {setMatchStatus(2); return "lose";}
                 break;
             case "paper":
-                if(handTwo == "rock" || handTwo == "spock") {setMatchStatus(1); return "win";}
+                if(handTwo == "rock" || handTwo == "spock") {setMatchStatus(1); setScore(score + 1); return "win";}
                 else {setMatchStatus(2); return "lose";}
                 break;
             case "rock":
-                if(handTwo == "lizard" || handTwo == "scissors") {setMatchStatus(1); return "win";}
+                if(handTwo == "lizard" || handTwo == "scissors") {setMatchStatus(1); setScore(score + 1); return "win";}
                 else {setMatchStatus(2); return "lose";}
                 break;
             case "lizard":
-                if(handTwo == "paper" || handTwo == "spock") {setMatchStatus(1); return "win";}
+                if(handTwo == "paper" || handTwo == "spock") {setMatchStatus(1); setScore(score + 1); return "win";}
                 else {setMatchStatus(2); return "lose";}
                 break;
             case "spock":
-                if(handTwo == "scissors" || handTwo == "rock") {setMatchStatus(1); return "win";}
+                if(handTwo == "scissors" || handTwo == "rock") {setMatchStatus(1); setScore(score + 1); return "win";}
                 else {setMatchStatus(2); return "lose";}
                 break;
         }
@@ -57,10 +68,8 @@ function App() {
 
     // Gera uma mão aleatória para o bot do jogo.
     function homeHandAltSelect(handSelected){
-        var array = ["scissors", "paper", "rock", "lizard", "spock"];
-        var location = Math.floor(5  *Math.random());
-        
-        let index = (location != 0)? location - 1 : location;
+        var array = ["scissors", "paper", "rock", "lizard", "spock"];        
+        let index = Math.floor(array.length * Math.random());
 
         setHomeHand(array[index]);
         setTimeout(()=>{
@@ -77,10 +86,23 @@ function App() {
     }
 
     // Pega o id de uma mão e retorna seu componente modificado.
-    function showHand(hand, autor){
+    function showHand(hand, autor, results){
         return (
-            (hand != "")?
-            <motion.div key={hand + "0"} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="select-button-div" id={hand} style={{position: "relative"}}>
+            (hand != "")?     
+            <motion.div key={autor+"0"} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="select-button-div game-button-div" id={hand} style={{position: "relative"}}>
+                {/* // Animação de vitória da mão específica. */}
+                <AnimatePresence>
+                {
+                    (results != 0 && ((autor == "you" && results == 1) || (autor == "home" && results == 2)))?
+                    <motion.div key="winA" transition={{delay: 0.2}} initial={{transform: "scale(0,0)"}} animate={{transform: "scale(1,1)"}} exit={{transform: "scale(0,0)"}} className="winAnimation">
+                        <motion.div key="winB" transition={{delay: 0.3}} initial={{transform: "scale(0,0)"}} animate={{transform: "scale(1,1)"}} exit={{transform: "scale(0,0)"}} className="winAnimation winA">
+                            <motion.div key="winC" transition={{delay: 0.4}} initial={{transform: "scale(0,0)"}} animate={{transform: "scale(1,1)"}} exit={{transform: "scale(0,0)"}} className="winAnimation winB"> 
+                            </motion.div>
+                        </motion.div>
+                    </motion.div>:""
+                }
+                </AnimatePresence>
+                {/* // Parte de dentro do botão de mão. */}
                 <div className="select-button">
                     {
                         (hand == "scissors")?     
@@ -96,13 +118,15 @@ function App() {
                         ""
                     }
                 </div>
+                {/* // Texto indicativo abaixo. */}
                 <div className="game-tag">
                     {
                         (autor == "you")?"YOU PICKED":"THE HOUSE PICKED"
                     }
                 </div>
-            </motion.div>:
-            <motion.div key={hand + "1"} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="select-button-div select-empty-button-div" style={{position: "relative"}}>
+            </motion.div>
+            :
+            <motion.div key={autor+"1"} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="select-button-div select-empty-button-div game-button-div" style={{position: "relative"}}>
                 <div className="select-button select-empty-button">
                 </div>
                 <div className="game-tag">
@@ -112,6 +136,13 @@ function App() {
                 </div>
             </motion.div>
         );
+    }
+
+    // Reseta o estado da aplicação.
+    function reset(){
+        setHandSelected("");
+        setHomeHand("");
+        setMatchStatus(0);
     }
 
     return (
@@ -128,7 +159,7 @@ function App() {
                 </div>
                 <div className="score-box">
                     <div className="score-text">SCORE</div>
-                    <div className="score">12</div>
+                    <div className="score">{score}</div>
                 </div>
             </div>
 
@@ -178,16 +209,15 @@ function App() {
                     </motion.div>:
                     <React.Fragment>
                         <motion.div
-                            onClick={()=>{console.log(matchStatus)}}
                             key="game"
                             className="game-box"
                             initial={{transform: "scale(0.3, 0.3)", opacity: 0}}
                             animate={{transform: "scale(1, 1)", opacity: 1}}
                             exit={{transform: "scale(0.3, 0.3)", opacity: 0}}>
                             <AnimatePresence exitBeforeEnter>
-                                {showHand(handSelected, "you")}
+                                {showHand(handSelected, "you", matchStatus)}
                             </AnimatePresence> <AnimatePresence exitBeforeEnter>
-                                {showHand(homeHand)}
+                                {showHand(homeHand, "home", matchStatus)}
                             </AnimatePresence>
                         </motion.div>
                         {
@@ -197,10 +227,15 @@ function App() {
                                 className="game-results-box"
                                 initial={{transform: "scale(0.3, 0.3)", opacity: 0}}
                                 animate={{transform: "scale(1, 1)", opacity: 1}}
-                                exit={{transform: "scale(0.3, 0.3)", opacity: 0}}>
-                                {
-                                    (matchStatus == 1)?"vitória o bravo":(matchStatus == 2)?"derrota lixo":"empata foda"
-                                }
+                                exit={{transform: "scale(0.3, 0.3)", opacity: 0}}>                             
+                                <div className="game-results">
+                                    {
+                                        (matchStatus == 1)?<div className="game-results-desc">YOU WIN</div>:
+                                        (matchStatus == 2)?<div className="game-results-desc">YOU LOSE</div>:
+                                        <div className="game-results-desc">DRAW</div>
+                                    }                 
+                                    <div className="game-results-button" onClick={()=>{reset()}}>PLAY AGAIN</div>
+                                </div>                              
                             </motion.div>:""
                         }
                         
@@ -209,14 +244,12 @@ function App() {
                 </AnimatePresence>
             </div>
 
-            {/* ----------- Botão de Regras ----------- */}
+            {/* ----------- Botão de regras. */}
             <div className="bottom-box">
                 <div className="rules-button" onClick={()=>{setPopupOpen(true)}}>
                     RULES
                 </div>
             </div>
-            {/* --------------------------------------- */}
-
             
             {/* Popup de regras com AnimatePresence para regular a animação de entrada e saída */}
             <AnimatePresence>
@@ -237,6 +270,11 @@ function App() {
                 </motion.div>
                 </React.Fragment>:""}
             </AnimatePresence>
+
+            <div className="attribution">
+                Challenge by <a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH" target="_blank">Frontend Mentor</a>. 
+                Coded by <a href="https://github.com/niloodev">niloodev</a>.
+            </div>
         </div>
     );
 }

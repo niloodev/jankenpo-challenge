@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# FRONTEND MENTOR - SOLUÇÃO DO DESAFIO DO PEDRA, PAPEL E TESOURA (BÔNUS)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa é uma das soluções para o [Desafio do Pedra, Papel e Tesoura do Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
+*Eu fiz o desafio no modo bônus, que é basicamente acrescentar "lizard" e "spock" ao jogo - uma referência à Star Trek e um jogo customizado que rola na comunidade nerd desde 1998, criado por Sam Kass, um engenheiro de software.
+É possível ver o código em React na pasta "src" e o deploy final da aplicação na pasta "build".
 
-## Available Scripts
+## SUMÁRIO
 
-In the project directory, you can run:
+- [RESUMO](#overview)
+  - [DESAFIO](#the-challenge)
+  - [IMAGENS](#screenshot)
+- [PROCESSO](#my-process)
+  - [FERRAMENTAS UTILIZADAS](#built-with)
+- [AUTOR | CRÉDITOS](#author)
 
-### `npm start`
+## RESUMO
+Foi um desafio um pouco mais complicado, visto que eu queria animar alguns componentes e manter a dinâmica da página interativa e agradável visualmente. Optei por utilizar React pelas bibliotecas adicionais que ele proporciona e a dinamicidade atráves dos estados dos componentes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### DESAFIO
 
-### `npm test`
+Este desafio possui umas especificações um pouco mais exigentes, visto que é bem dinâmico e estrito em suas mecânicas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Você pode utilizar as ferramentas que quiser para completar o desafio.
 
-### `npm run build`
+Os usuários precisam conseguir:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Ver os elementos na tela a partir da resolução do dispositivo sem distorções (**responsividade**).
+- Escolher e interagir com os componentes do jogo, resultando em uma vitória ou derrota contra um suposto "bot".
+- Ser capaz de acessar as regras de forma fácil e simples, sem complicações.
+- **Bônus**: Adicionar "spock" e "lizard" ao jogo, como foi o caso.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### IMAGENS | PRINTS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Mobile:** tela principal.
+![](./screenshots/mobile-home.png)
+**Mobile:** tela de jogo.
+![](./screenshots/mobile-game.png)
+**Mobile:** tela de regras.
+![](./screenshots/mobile-rules.png)
+**Desktop:** tela principal.
+![](./screenshots/desktop-home.png)
+**Desktop:** tela de jogo.
+![](./screenshots/desktop-game.png)
+**Desktop:** tela de regras.
+![](./screenshots/desktop-rules.png)
 
-### `npm run eject`
+## PROCESSO
+Eu iniciei o projeto em React e meu primeiro passo foi a construção da base em JSX, separei as variáveis de cor - que o desafio disponibiliza - no meu arquivo "App.css" e deixei o arquivo "index.css" para mudanças mais estruturais; como o tamanho mínimo da página e esse tipo de responsividade, além da definição da fonte.
+Depois eu fui gradualmente desenvolvendo o aplicativo, eu dividi em três partes: o cabeçalho, o centro (que engloba a tela de seleção e a tela do jogo em si) e a parte inferior (que em dispositivos mais largos se tornaria absoluto e iria para o canto inferior direito, como pede o desafio em seu design exemplo). Fui desenvolvendo os componentes existentes nelas, ajustando a responsividade individual de cada um.
+Outrora, já perto de concluir o visual, comecei o desenvolvimento da lógica por trás do jogo - que é bem fácil, **cada mão vence outras duas mãos e perde para o resto, com exceção de si mesma, uma chance que pode ser eliminada facilmente no começo da função na comparação das duas** - e terminei com alguns ajustes na responsividade geral.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### FERRAMENTAS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- [Framer Motion](https://www.framer.com/motion/)
+- O conceito de "Mobile-First".
+- CSS
+- Fonte ["Barlow Semi Condensed"](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## AUTOR | CRÉDITOS
+**Feito por niloodev | Ezequiel Nilo**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**QUALQUER DICA OU FEEDBACK É ALTAMENTE APRECIADO! 🐸**
