@@ -54,7 +54,7 @@ Outrora, já perto de concluir o visual, comecei o desenvolvimento da lógica po
 
 - React
 - [Framer Motion](https://www.framer.com/motion/)
-- O conceito de "Mobile-First".
+- O conceito de ["Mobile-First"](https://www.youtube.com/watch?v=g_gXar45uR8)
 - CSS
 - Fonte ["Barlow Semi Condensed"](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
 
