@@ -8,7 +8,7 @@ Essa é uma das soluções para o [Desafio do Pedra, Papel e Tesoura do Frontend
 
 - [RESUMO](#RESUMO)
   - [DESAFIO](#DESAFIO)
-  - [IMAGENS](#IMAGENS)
+  - [IMAGENS | PRINTS](#PRINTS)
 - [PROCESSO](#PROCESSO)
   - [FERRAMENTAS UTILIZADAS](#FERRAMENTAS)
 - [AUTOR | CRÉDITOS](#AUTOR)
@@ -30,7 +30,7 @@ Os usuários precisam conseguir:
 - Ser capaz de acessar as regras de forma fácil e simples, sem complicações.
 - **Bônus**: Adicionar "spock" e "lizard" ao jogo, como foi o caso.
 
-### IMAGENS | PRINTS
+### PRINTS
 
 ### MOBILE
 ![](./screenshots/mobile-home.png)
@@ -58,7 +58,7 @@ Outrora, já perto de concluir o visual, comecei o desenvolvimento da lógica po
 - CSS
 - Fonte ["Barlow Semi Condensed"](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
 
-## AUTOR | CRÉDITOS
+## AUTOR
 **Feito por niloodev | Ezequiel Nilo**
 
 **QUALQUER DICA OU FEEDBACK É ALTAMENTE APRECIADO! 🐸**
