@@ -6,7 +6,7 @@ Essa é uma das soluções para o [Desafio do Pedra, Papel e Tesoura do Frontend
 
 ## SUMÁRIO
 
-- [RESUMO](#overview)
+- [RESUMO](#RESUMO)
   - [DESAFIO](#the-challenge)
   - [IMAGENS](#screenshot)
 - [PROCESSO](#my-process)
