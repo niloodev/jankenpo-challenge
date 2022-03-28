@@ -4,7 +4,7 @@ Essa é uma das soluções para o [Desafio do Pedra, Papel e Tesoura do Frontend
 *Eu fiz o desafio no modo bônus, que é basicamente acrescentar "lizard" e "spock" ao jogo - uma referência à Star Trek e um jogo customizado que rola na comunidade nerd desde 1998, criado por Sam Kass, um engenheiro de software.
 É possível ver o código em React na pasta "src" e o deploy final da aplicação na pasta "html-build".
 
-Veja a solução em tempo real [aqui](https://niloodev.github.io/frontend-challenge-2/index.html).
+Veja a solução em tempo real [aqui](https://niloodev.github.io/frontend-prototypes/jankenpo-challenge/index.html).
 
 ## SUMÁRIO
 
