@@ -1,22 +1,22 @@
 // *niloodev
-// Essa aplicação é um desafio proposto pelo Frontend Mentor, onde foi pedido um jogo de Jankenpon (pedra, papel e tesoura)
-// customizado, onde o usuário poderia escolher dentre as cinco opções disponíveis - pedra, papel, tesoura, lagarto ou spock (referência à Star Trek)
-// e dionte da opção escolhida, um "bot" iria escolher uma outra opção aleatória e o jogo iria exibir o resultado.
-// REQUISITOS PARA CONCLUSÂO DO DESAFIO:
-// - Ser responsivo.
-// - O jogo proposto ser funcional diante das regras.
-// - Cumprir os requisitos em questão de páginas solicitadas (seleção, pop-up de regras etc).
-// *utilizei do conceito aplicado do "mobile-first" neste projeto, o que é visível atráves do arquivo CSS.
+// 🐸: This application is a challenge proposed by Frontend Mentor, where a customized game of Jankenpon (rock, paper, scissors)
+// where the user could choose among five options - rock, paper, scissors, lizard or spock (Star Trek reference)
+// and in front of the chosen option, a bot would choose another random option and the game would display the result.
+// REQUIREMENTS FOR COMPLETING THE CHALLENGE:
+// - Be responsive.
+// - The proposed game is functional under the rules.
+// - Fulfill the requirements on the requested pages (selection, rules pop-up, etc).
+// I used the concept of "mobile-first" in this project, which is visible through the CSS file.
 
 import React, { useState } from "react"
 
-// Importação de CSS
+// CSS import.
 import "./App.css";
 
-// Importação das DIV MOTION.
+// Framer Motion import.
 import { motion, AnimatePresence } from "framer-motion"
 
-// Importação de SVG
+// SVG imports.
 import SVG_bg_pentagon from "./svg/bg-pentagon.svg";
 
 import SVG_icon_lizard from "./svg/icon-lizard.svg";
@@ -28,18 +28,18 @@ import SVG_icon_spock from "./svg/icon-spock.svg";
 import SVG_icon_close from "./svg/icon-close.svg";
 import SVG_rules from "./svg/image-rules-bonus.svg";
 
-// Componente da página principal da aplicação.
+// Main page component.
 function App() {
-    // Popup aberto?
+    // Is Popup open?
     const [popupOpen, setPopupOpen] = useState(false);
 
-    //////////////////////////////////////////////////// Funções do jogo em si.
+    //////////////////////////////////////////////////// Some game functions and states.
     const [score, setScore] = useState(0);
     const [handSelected, setHandSelected] = useState("");
     const [homeHand, setHomeHand] = useState("");
     const [matchStatus, setMatchStatus] = useState(0);
 
-    // Checa a vitória ou derrota da primeira mão em relação a segunda.
+    // Checks if the first hand wins, loses or draw related to second hand.
     function handCheck(handOne, handTwo){
         if(handOne == handTwo) {setMatchStatus(3); return "draw";}
         switch(handOne){
@@ -66,7 +66,7 @@ function App() {
         }
     }
 
-    // Gera uma mão aleatória para o bot do jogo.
+    // Generates a random hand for the bot.
     function homeHandAltSelect(handSelected){
         var array = ["scissors", "paper", "rock", "lizard", "spock"];        
         let index = Math.floor(array.length * Math.random());
@@ -77,7 +77,7 @@ function App() {
         }, 1000);
     }
 
-    // Define a mão do jogador.
+    // Sets the player's hand.
     function setHand(handId){
         setHandSelected(handId);
         setTimeout(()=>{
@@ -85,12 +85,12 @@ function App() {
         }, 1500);
     }
 
-    // Pega o id de uma mão e retorna seu componente modificado.
+    // Receives the hand id and returns the styled component.
     function showHand(hand, autor, results){
         return (
             (hand != "")?     
             <motion.div key={autor+"0"} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="select-button-div game-button-div" id={hand} style={{position: "relative"}}>
-                {/* // Animação de vitória da mão específica. */}
+                {/* Hand win animation. */}
                 <AnimatePresence>
                 {
                     (results != 0 && ((autor == "you" && results == 1) || (autor == "home" && results == 2)))?
@@ -102,7 +102,7 @@ function App() {
                     </motion.div>:""
                 }
                 </AnimatePresence>
-                {/* // Parte de dentro do botão de mão. */}
+                {/* Inside wrapper hand SVG. */}
                 <div className="select-button">
                     {
                         (hand == "scissors")?     
@@ -118,7 +118,7 @@ function App() {
                         ""
                     }
                 </div>
-                {/* // Texto indicativo abaixo. */}
+                {/* Indicative text */}
                 <div className="game-tag">
                     {
                         (autor == "you")?"YOU PICKED":"THE HOUSE PICKED"
@@ -138,7 +138,7 @@ function App() {
         );
     }
 
-    // Reseta o estado da aplicação.
+    // Resets the game functions / state.
     function reset(){
         setHandSelected("");
         setHomeHand("");
@@ -148,7 +148,7 @@ function App() {
     return (
         <div className="main-div">
 
-            {/* Cabeçalho principal */}
+            {/* Main header. */}
             <div className="header">
                 <div className="description">
                     <span>ROCK</span>
@@ -163,7 +163,7 @@ function App() {
                 </div>
             </div>
 
-            {/* Container principal, onde as páginas do jogo serão incluídas. */}
+            {/* Main container, or select-box for the close ones. */}
             <div className="select-box">
                 <AnimatePresence exitBeforeEnter>
                 {
@@ -244,14 +244,14 @@ function App() {
                 </AnimatePresence>
             </div>
 
-            {/* ----------- Botão de regras. */}
+            {/* ----------- Rules button. */}
             <div className="bottom-box">
                 <div className="rules-button" onClick={()=>{setPopupOpen(true)}}>
                     RULES
                 </div>
             </div>
             
-            {/* Popup de regras com AnimatePresence para regular a animação de entrada e saída */}
+            {/* Rules popup. */}
             <AnimatePresence>
                 {(popupOpen)?<React.Fragment>
                 <motion.div className="popup-black-screen" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}></motion.div>

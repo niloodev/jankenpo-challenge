@@ -1,36 +1,38 @@
-# FRONTEND MENTOR - SOLUÇÃO DO DESAFIO DO PEDRA, PAPEL E TESOURA (BÔNUS)
+# FRONTEND MENTOR - SOLUTION TO THE JANKENPO CHALLENGE 
 
-Essa é uma das soluções para o [Desafio do Pedra, Papel e Tesoura do Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
-*Eu fiz o desafio no modo bônus, que é basicamente acrescentar "lizard" e "spock" ao jogo - uma referência à Star Trek e um jogo customizado que rola na comunidade nerd desde 1998, criado por Sam Kass, um engenheiro de software.
-É possível ver o código em React na pasta "src" e o deploy final da aplicação na pasta "html-build".
+![](./screenshots/desktop-home.png)
 
-Veja a solução em tempo real [aqui](https://niloodev.github.io/frontend-prototypes/jankenpo-challenge/index.html).
+This is one of the solutions to the [Frontend Mentor's Rock, Paper, Scissors Challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
+*I did the challenge in bonus mode, which is basically adding "lizard" and "spock" to the game - a reference to Star Trek and a custom game that has been around in the geek community since 1998, created by Sam Kass, a software engineer.
+You can see the React code in the "src" folder.
 
-## SUMÁRIO
+See the real-time solution [here](https://jankenpo-challenge.vercel.app/).
 
-- [RESUMO](#RESUMO)
-  - [DESAFIO](#DESAFIO)
-  - [IMAGENS | PRINTS](#PRINTS)
-- [PROCESSO](#PROCESSO)
-  - [FERRAMENTAS UTILIZADAS](#FERRAMENTAS)
-- [AUTOR | CRÉDITOS](#AUTOR)
+## SUMMARY
 
-## RESUMO
-Foi um desafio um pouco mais complicado, visto que eu queria animar alguns componentes e manter a dinâmica da página interativa e agradável visualmente. Optei por utilizar React pelas bibliotecas adicionais que ele proporciona e a dinamicidade atráves dos estados dos componentes.
+- [ABSTRACT](#ABSTRACT)
+  - [CHALLENGE](#CHALLENGE)
+  - [IMAGES | PRINTS](#PRINTS)
+- [PROCESS](#PROCESS)
+  - [TOOLS USED](#TOOLS)
+- [AUTHOR | CREDITS](#AUTHOR)
+
+## ABSTRACT
+This was a bit more of a challenge, since I wanted to animate some components and keep the dynamics of the page interactive and visually pleasing. I chose to use React for the additional libraries it provides and the dynamics through the components' states.
 
 
-### DESAFIO
+### CHALLENGE
 
-Este desafio possui umas especificações um pouco mais exigentes, visto que é bem dinâmico e estrito em suas mecânicas.
+This challenge has a little more demanding specifications, since it is very dynamic and strict in its mechanics.
 
-Você pode utilizar as ferramentas que quiser para completar o desafio.
+You can use whatever tools you want to complete the challenge.
 
-Os usuários precisam conseguir:
+Users must be able to
 
-- Ver os elementos na tela a partir da resolução do dispositivo sem distorções (**responsividade**).
-- Escolher e interagir com os componentes do jogo, resultando em uma vitória ou derrota contra um suposto "bot".
-- Ser capaz de acessar as regras de forma fácil e simples, sem complicações.
-- **Bônus**: Adicionar "spock" e "lizard" ao jogo, como foi o caso.
+- See the elements on the screen from the device resolution without distortions (**responsivity**).
+- Choose and interact with game components, resulting in a win or loss against a supposed "bot".
+- Be able to access the rules easily and simply, without complications.
+- **Bonus**: Adding "spock" and "lizard" to the game, as was the case.
 
 ### PRINTS
 
@@ -41,26 +43,25 @@ Os usuários precisam conseguir:
 ![](./screenshots/mobile-rules.png)
 
 ## DESKTOP
-![](./screenshots/desktop-home.png)
 ![](./screenshots/desktop-game.png)
 ![](./screenshots/desktop-rules.png)
 
-## PROCESSO
-Eu iniciei o projeto em React e meu primeiro passo foi a construção da base em JSX, separei as variáveis de cor - que o desafio disponibiliza - no meu arquivo "App.css" e deixei o arquivo "index.css" para mudanças mais estruturais; como o tamanho mínimo da página e esse tipo de responsividade, além da definição da fonte.
+## PROCESS
+I started the project in React and my first step was to build the base in JSX, I separated the color variables - that the challenge provides - in my "App.css" file and left the "index.css" file for more structural changes; like the minimum page size and that kind of responsiveness, and the font definition.
 
-Depois eu fui gradualmente desenvolvendo o aplicativo, eu dividi em três partes: o cabeçalho, o centro (que engloba a tela de seleção e a tela do jogo em si) e a parte inferior (que em dispositivos mais largos se tornaria absoluto e iria para o canto inferior direito, como pede o desafio em seu design exemplo). Fui desenvolvendo os componentes existentes nelas, ajustando a responsividade individual de cada um.
+Then I gradually developed the app, I divided it into three parts: the header, the center (which encompasses the selection screen and the game screen itself) and the bottom (which on wider devices would become absolute and go to the bottom right corner, as the challenge asks in its example design). I went about developing the existing components in them, adjusting the individual responsiveness of each.
 
-Outrora, já perto de concluir o visual, comecei o desenvolvimento da lógica por trás do jogo - que é bem fácil, **cada mão vence outras duas mãos e perde para o resto, com exceção de si mesma, uma chance que pode ser eliminada facilmente no começo da função na comparação das duas** - e terminei com alguns ajustes na responsividade geral.
+Once, close to finishing the visuals, I started developing the logic behind the game - which is quite easy, **each hand beats two other hands and loses to the rest, except for itself, a chance that can be easily eliminated at the beginning of the function when comparing the two** - and finished with some adjustments to the overall responsiveness.
 
-### FERRAMENTAS
+### TOOLS
 
 - React
 - [Framer Motion](https://www.framer.com/motion/)
-- O conceito de ["Mobile-First"](https://www.youtube.com/watch?v=g_gXar45uR8)
+- The concept of ["Mobile-First"](https://www.youtube.com/watch?v=g_gXar45uR8)
 - CSS
-- Fonte ["Barlow Semi Condensed"](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Font ["Barlow Semi Condensed"](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
 
-## AUTOR
-**Feito por niloodev | Ezequiel Nilo**
+## AUTHOR
+**made by niloodev | Ezequiel Nilo**
 
-**QUALQUER DICA OU FEEDBACK É ALTAMENTE APRECIADO! 🐸**
+**ANY TIPS OR FEEDBACK IS HIGHLY APPRECIATED! 🐸**

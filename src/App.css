@@ -1,21 +1,22 @@
 /* *niloodev
-    - Variáveis principais.
-    - Estilização da DIV principal do app.
-    - Estilização do cabeçalho e de seus componentes.
-    - Estilização do componente de seleção.
-    - Estilização do componente "dentro do jogo" | in-game.
-    - Estilização do componente inferior (botão de regras).
-    - Estilização do pop-up de regras.
-    - Estilização da animação de vitória | *coloquei separado por questão de organização, por ser algo "bônus".
+    🐸: Summary
+    - Main variables.
+    - Styling of the app's main DIV.
+    - Styling of the header and its components.
+    - Styling of the selection component.
+    - Styling of the "in-game" component
+    - Styling of the bottom component (rules button)
+    - Styling of the rules pop-up.
+    - Styling of the victory animation | *I've put it separately for the sake of organization, since it's something "bonus".
 */
 
 
-/* Variáveis principais do CSS. */
+/* Main variables. */
 :root {
-    /* Variável do background. */
+    /* Background. */
     --HSL-background-color: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 
-    /* Variáveis de cores dos elementos. */
+    /* Elements colors. */
     --HSL-scissors: hsl(40, 84%, 53%);
     --HSL-scissors-shadow: hsl(39, 88%, 44%);
     --HSL-paper: hsl(230, 89%, 65%);
@@ -27,18 +28,18 @@
     --HSL-spock: hsl(189, 58%, 57%);
     --HSL-spock-shadow: hsl(189, 59%, 53%);
 
-    /* Variáveis das cores dos textos. */
+    /* Text colors. */
     --HSL-dark-text: hsl(229, 25%, 31%);
     --HSL-score-text: hsl(229, 64%, 46%);
     --HSL-header-outline: hsl(217, 16%, 45%);
 
-    /* Variáveis de customização de elementos básicos. */
+    /* Other. */
     --RGB-score-box-background: rgb(255, 255, 255);
 }
 
 
 
-/* Estilização da DIV principal do aplicativo. */
+/* Styling of the app's main DIV. */
 .main-div {
     background: var(--HSL-background-color);
     width: calc(100% - 40px);
@@ -60,7 +61,7 @@
     }
 }
 
-/* Estilização dos créditos *ignorar */
+/* Credits styling *ignore */
 .attribution {
     font-size: 8px; text-align: center; position: absolute; bottom: 6px;
     color: white;
@@ -83,7 +84,7 @@
 
 
 
-/* ---------------- Estilização do Cabeçalho e Componentes ---------------- */
+/* ---------------- Styling of the header and its components. ---------------- */
 .header {
     border: 3px solid var(--HSL-header-outline);
     width: calc(100% - 20px);
@@ -194,7 +195,7 @@
         font-size: 13px;
     }
 }
-/* ------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------- */
 
 
 
@@ -215,7 +216,7 @@
 
 
 
-/* -------------------- Estilização da DIV de Seleção  -------------------- */
+/* -------------------- Styling of the selection component.  -------------------- */
 .select-box {
     flex: 4;
     width: 100%;
@@ -236,7 +237,7 @@
     width: 100%;
 }
 
-/* ---- Criação dos botões interativos. */
+/* ---- Interactive button styling. */
 .select-button-div {
     display: flex; justify-content: center; align-items: center;
     border-radius: 100%;
@@ -308,7 +309,7 @@
     }
 }
 
-/* ---- Definição de cores e localizações dos botões interativos. */
+/* ---- Colors definition. */
 #scissors {
     background: var(--HSL-scissors);
     border-bottom: 3.5px solid var(--HSL-scissors-shadow);
@@ -333,7 +334,7 @@
     background: var(--HSL-spock);
     border-bottom: 3.5px solid var(--HSL-spock-shadow);
 }
-/* ------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------------- */
 
 
 
@@ -353,7 +354,7 @@
 
 
 
-/* ----------------------- Estilização da DIV Game  ----------------------- */
+/* ----------------------- Styling of the "in-game" component  ----------------------- */
 .game-box {
     width: 75%;
     flex: 1;
@@ -446,7 +447,7 @@
         margin-top: -60px;
     }
 }
-/* ------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------------- */
 
 
 
@@ -463,7 +464,7 @@
 
 
 
-/* -------------------- Estilização da Caixa Inferior  -------------------- */
+/* -------------------- Styling of the bottom component (rules button).  -------------------- */
 .bottom-box {
     flex: 1;
     width: 100%;
@@ -508,7 +509,7 @@
         transform: scale(0.7, 0.7);
     }
 }
-/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------- */
 
 
 
@@ -524,7 +525,7 @@
 
 
 
-/* ------------------- Estilização do Janela de Regras  ------------------- */
+/* ------------------- Styling of the rules pop-up.  ------------------- */
 .popup-div {
     width: calc(100% - 40px);
     height: calc(100% - 40px);
@@ -613,7 +614,7 @@
 
 
 
-/* ------------------ Estilização da Animação de Vitória  ----------------- */
+/* ------------------ Victory animation.  ----------------- */
 .winAnimation {
     width: 140px;
     height: 140px;
@@ -636,4 +637,4 @@
 
     background: rgba(255, 255, 255, 0.06);
 }
-/* ------------------------------------------------------------------------ */
+/* -------------------------------------------------------- */
